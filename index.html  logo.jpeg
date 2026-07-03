@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APEC Login</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+    background:linear-gradient(135deg,#8b0000,#d62828);
+}
+
+.login-container{
+    background:#fff;
+    width:360px;
+    padding:35px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+}
+
+.logo{
+    width:120px;
+    margin-bottom:15px;
+}
+
+h2{
+    color:#8b0000;
+    margin-bottom:5px;
+}
+
+h4{
+    color:#555;
+    margin-bottom:25px;
+    font-size:14px;
+}
+
+.input-box{
+    width:100%;
+    padding:12px;
+    margin:10px 0;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:15px;
+}
+
+.input-box:focus{
+    outline:none;
+    border-color:#8b0000;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    margin-top:15px;
+    border:none;
+    border-radius:8px;
+    background:#8b0000;
+    color:white;
+    font-size:16px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#b30000;
+}
+
+.footer{
+    margin-top:18px;
+    font-size:13px;
+    color:#666;
+}
+
+.footer a{
+    text-decoration:none;
+    color:#8b0000;
+}
+</style>
+
+</head>
+<body>
+
+<div class="login-container">
+
+    <img src="logo.jpeg" alt="College Logo" class="logo">
+
+    <h2>Adhiparasakthi Engineering College</h2>
+    <h4>Student Login Portal</h4>
+
+    <form onsubmit="return login()">
+
+        <input
+            type="text"
+            id="username"
+            class="input-box"
+            placeholder="Username"
+            required>
+
+        <input
+            type="password"
+            id="password"
+            class="input-box"
+            placeholder="Password"
+            required>
+
+        <button type="submit">Login</button>
+
+    </form>
+
+    <div class="footer">
+        Forgot Password? <a href="#">Click Here</a>
+    </div>
+
+</div>
+
+<script>
+function login(){
+
+    const user = document.getElementById("username").value;
+    const pass = document.getElementById("password").value;
+
+    // Demo Login
+    if(user==="admin" && pass==="admin123"){
+        alert("Login Successful!");
+        window.location.href="home.html"; // Change to your page
+    }else{
+        alert("Invalid Username or Password");
+    }
+
+    return false;
+}
+</script>
+
+</body>
+</html>
