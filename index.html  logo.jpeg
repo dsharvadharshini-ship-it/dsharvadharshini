@@ -3,31 +3,31 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>APEC Login</title>
+<title>APEC Student Login</title>
 
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:Segoe UI, Arial, sans-serif;
 }
 
 body{
+    height:100vh;
     display:flex;
     justify-content:center;
     align-items:center;
-    height:100vh;
-    background:linear-gradient(135deg,#8b0000,#d62828);
+    background:linear-gradient(135deg,#8B0000,#C62828,#F5F5F5);
 }
 
-.login-container{
+.login-box{
+    width:380px;
     background:#fff;
-    width:360px;
-    padding:35px;
     border-radius:15px;
+    padding:35px;
     text-align:center;
-    box-shadow:0 8px 20px rgba(0,0,0,0.3);
+    box-shadow:0 10px 25px rgba(0,0,0,0.3);
 }
 
 .logo{
@@ -36,37 +36,38 @@ body{
 }
 
 h2{
-    color:#8b0000;
+    color:#8B0000;
     margin-bottom:5px;
 }
 
-h4{
-    color:#555;
+p{
+    color:#666;
     margin-bottom:25px;
-    font-size:14px;
 }
 
-.input-box{
+.input-group{
+    margin-bottom:18px;
+}
+
+input{
     width:100%;
     padding:12px;
-    margin:10px 0;
     border:1px solid #ccc;
     border-radius:8px;
     font-size:15px;
+    outline:none;
 }
 
-.input-box:focus{
-    outline:none;
-    border-color:#8b0000;
+input:focus{
+    border-color:#8B0000;
 }
 
 button{
     width:100%;
     padding:12px;
-    margin-top:15px;
     border:none;
     border-radius:8px;
-    background:#8b0000;
+    background:#8B0000;
     color:white;
     font-size:16px;
     cursor:pointer;
@@ -74,53 +75,57 @@ button{
 }
 
 button:hover{
-    background:#b30000;
+    background:#A00000;
+}
+
+.links{
+    margin-top:15px;
+    font-size:14px;
+}
+
+.links a{
+    text-decoration:none;
+    color:#8B0000;
 }
 
 .footer{
-    margin-top:18px;
-    font-size:13px;
-    color:#666;
-}
-
-.footer a{
-    text-decoration:none;
-    color:#8b0000;
+    margin-top:20px;
+    font-size:12px;
+    color:#777;
 }
 </style>
 
 </head>
 <body>
 
-<div class="login-container">
+<div class="login-box">
 
     <img src="logo.jpeg" alt="College Logo" class="logo">
 
     <h2>Adhiparasakthi Engineering College</h2>
-    <h4>Student Login Portal</h4>
+
+    <p>Student Login Portal</p>
 
     <form onsubmit="return login()">
 
-        <input
-            type="text"
-            id="username"
-            class="input-box"
-            placeholder="Username"
-            required>
+        <div class="input-group">
+            <input type="text" id="username" placeholder="Username" required>
+        </div>
 
-        <input
-            type="password"
-            id="password"
-            class="input-box"
-            placeholder="Password"
-            required>
+        <div class="input-group">
+            <input type="password" id="password" placeholder="Password" required>
+        </div>
 
         <button type="submit">Login</button>
 
     </form>
 
+    <div class="links">
+        <a href="#">Forgot Password?</a>
+    </div>
+
     <div class="footer">
-        Forgot Password? <a href="#">Click Here</a>
+        © 2026 Adhiparasakthi Engineering College
     </div>
 
 </div>
@@ -128,14 +133,15 @@ button:hover{
 <script>
 function login(){
 
-    const user = document.getElementById("username").value;
-    const pass = document.getElementById("password").value;
+    var username=document.getElementById("username").value;
+    var password=document.getElementById("password").value;
 
-    // Demo Login
-    if(user==="admin" && pass==="admin123"){
+    // Demo login
+    if(username==="admin" && password==="admin123"){
         alert("Login Successful!");
-        window.location.href="home.html"; // Change to your page
-    }else{
+        window.location.href="home.html";
+    }
+    else{
         alert("Invalid Username or Password");
     }
 
